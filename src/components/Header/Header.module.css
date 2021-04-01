@@ -1,0 +1,12 @@
+.headerWrapper {
+  display: flex;
+  align-items: 'center';
+}
+
+.headerWrapper li {
+  margin: 0 1rem;
+}
+
+.activeMenuItem {
+  border: 3px solid #059669;
+}
