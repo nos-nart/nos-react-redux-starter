@@ -22,6 +22,7 @@ module.exports = {
     'no-plusplus': 0,
     'react/jsx-props-no-spreading': 0,
     'import/no-unresolved': [0, { caseSensitive: false }],
+    'react/no-children-prop': 0,
     'react/jsx-filename-extension': [
       1,
       {

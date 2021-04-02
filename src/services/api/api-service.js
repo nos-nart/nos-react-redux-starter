@@ -28,3 +28,14 @@ axiosApi.interceptors.request.use(
   },
   (error) => Promise.reject(error),
 );
+
+axiosApi.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response.status === 401) {
+      // handle error authenticate ~> redirect to login page
+    }
+  },
+);
+
+export default axiosApi;

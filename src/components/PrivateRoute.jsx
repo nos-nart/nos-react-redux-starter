@@ -1,20 +1,27 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import useIsLoggedIn from 'hooks/useIsLoggedIn';
-import Login from '../pages/Login/Login';
+import { Redirect, Route } from 'react-router-dom';
+import useIsLoggedIn from '../hooks/useIsLoggedIn';
 
 // eslint-disable-next-line react/prop-types
-const PrivateRoute = ({ component, ...rest }) => {
+const PrivateRoute = ({ children, ...rest }) => {
   const isLoggedIn = useIsLoggedIn();
+
   return (
-    <>
-      {isLoggedIn ? (
-        <Route component={component} {...rest} />
-      ) : (
-        // eslint-disable-next-line no-undef
-        <Route component={Login} />
-      )}
-    </>
+    <Route
+      {...rest}
+      render={({ location }) =>
+        isLoggedIn ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/login',
+              state: { from: location },
+            }}
+          />
+        )
+      }
+    />
   );
 };
 

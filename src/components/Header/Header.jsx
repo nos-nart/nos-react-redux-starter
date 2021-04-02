@@ -27,6 +27,9 @@ const Header = () => {
         <li>
           <MenuItem exact={false} to="/about" title="About" />
         </li>
+        <li>
+          <MenuItem exact={false} to="/protected" title="Protected" />
+        </li>
       </ul>
     </nav>
   );

@@ -1,5 +1,12 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function NotFound() {
-  return <>You lost</>;
+  const location = useLocation();
+
+  return (
+    <div>
+      <p>no route match for {location.pathname}</p>
+    </div>
+  );
 }

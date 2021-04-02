@@ -1,7 +1,10 @@
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
-export default function useIsLoggedIn() {
+const useIsLoggedIn = () => {
   // const token = useSelector(selectAuth);
-  const token = useSelector();
-  return token !== null;
-}
+  // const token = useSelector();
+  // return token !== null;
+  return false;
+};
+
+export default { useIsLoggedIn };

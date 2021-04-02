@@ -20,7 +20,7 @@ export default function TestRedux() {
   React.useEffect(() => {
     dispatch(fetchTodos());
     console.log('todos: ', todos);
-  }, [dispatch, todos]);
+  }, [dispatch]);
 
   return (
     <div className="App">
