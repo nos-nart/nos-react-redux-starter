@@ -4,7 +4,7 @@ const useIsLoggedIn = () => {
   // const token = useSelector(selectAuth);
   // const token = useSelector();
   // return token !== null;
-  return false;
+  return true;
 };
 
 export default { useIsLoggedIn };

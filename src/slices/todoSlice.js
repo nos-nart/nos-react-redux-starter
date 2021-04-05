@@ -1,7 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
-import appConfig from '../config';
+
+import { fetchTodoService } from '../services/todo-service';
+// import appConfig from '../config';
 
 /**
  * set the initial state for counter
@@ -42,7 +43,7 @@ export default todo.reducer;
 export const fetchTodos = () => async (dispatch) => {
   try {
     dispatch(getTodos());
-    const { data } = await axios.get(appConfig.REACT_APP_MOCK_API_URL);
+    const { data } = await fetchTodoService();
     dispatch(getTodosSuccess(data));
   } catch (error) {
     dispatch(getTodosFail(`error: ${error}`));

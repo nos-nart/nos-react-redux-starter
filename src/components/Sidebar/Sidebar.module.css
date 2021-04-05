@@ -1,0 +1,8 @@
+.sidebarWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.activeMenuItem {
+  border: 3px solid #059669;
+}

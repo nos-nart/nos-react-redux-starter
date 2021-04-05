@@ -1,11 +1,11 @@
 import axios from 'axios';
-import appConfig from 'config';
+import appConfig from '../../config';
 
 const axiosApi = axios.create({
   // `baseURL` will be prepended to `url` unless `url` is absolute.
   // It can be convenient to set `baseURL` for an instance of axios to pass relative URLs
   // to methods of that instance.
-  baseURL: appConfig.BASE_URL,
+  baseURL: `${appConfig.REACT_APP_BASE_URL}`,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -33,7 +33,7 @@ axiosApi.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response.status === 401) {
-      // handle error authenticate ~> redirect to login page
+      // Handle 401 Unauthorized ~> redirect to login page
     }
   },
 );
